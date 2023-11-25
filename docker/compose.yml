@@ -10,6 +10,8 @@ services:
     volumes:
       - ./php/php.ini:/usr/local/etc/php/conf.d/php.ini
       - ../src:/var/www
+    ports:
+      - ${SYMFONYLOCALPORT}:${SYMFONYCONTAINERPORT}
 
   nginx:
     image: docker.io/nginx:${NGINX}-alpine
